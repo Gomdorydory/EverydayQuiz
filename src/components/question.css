@@ -1,0 +1,48 @@
+input {
+  text-align: end;
+  border: none;
+  height: 30px;
+  width : 100px;
+  font-size: 40px;
+}
+
+.questions {
+  display: flex;
+  padding: 10px;
+}
+
+.questionNum {
+  width: 30px;
+  font-size: 20px;
+}
+
+.process {
+  text-align: end;
+  margin-bottom: 10px;
+  border-bottom: 2px solid black;
+}
+
+.num1{
+  text-align: end;
+  padding: 10px;
+}
+
+.process_2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cal {
+  width:20%;
+  padding: 10px;
+}
+
+.num2 {
+  padding: 10px;
+}
+
+
+.processed {
+  text-align: end;
+}
+
