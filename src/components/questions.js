@@ -3,14 +3,13 @@ import { DiaryStateContext } from "../App";
 import "./question.css";
 
 const Questions = () => {
-  const dummydata = useContext(DiaryStateContext);
-  console.log(dummydata);
+  const data = useContext(DiaryStateContext);
 
-  dummydata.map((it) => console.log(it.num1));
+  data.map((it) => console.log(it.num1));
 
   return (
     <div>
-      {dummydata.map((it) => (
+      {data.map((it) => (
         <div key={it.id}>
           <div className="questions">
             <div className="questionNum">문{it.id}</div>

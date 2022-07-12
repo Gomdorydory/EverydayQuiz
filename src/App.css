@@ -4,7 +4,6 @@
 
 .quiz {
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
   background-color: rgb(177, 177, 177);
   padding: 20px;
@@ -13,6 +12,7 @@
 
 .row {
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
   background-color: rgb(255, 255, 255);
   min-height: 100px;
@@ -20,8 +20,14 @@
 }
 
 .question {
+  display: flex;
   padding: 10px;
   margin: 10px;
   min-height: 100px;
   width: 230px;
+}
+
+.real {
+  display: flex;
+  
 }

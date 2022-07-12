@@ -1,15 +1,17 @@
 import React, { useContext } from "react";
+import { DiaryDispatchContext } from "../App";
 import Questions from "../components/questions";
 
 const Quiz = () => {
+  const onCreate = useContext(DiaryDispatchContext);
   return (
     <div>
       <h1>두자리수의 곱셈 세로셈</h1>
-      <button> 다른 문제 </button>
+      <button onClick={onCreate}> 다른 문제 </button>
       <div className="quiz">
-        <section className="row 1">
+        <section className="row">
           <div className="question">
-            <Questions />
+            <Questions className="real" />
           </div>
         </section>
       </div>
