@@ -5,15 +5,11 @@ import Questions from "../components/questions";
 const Quiz = () => {
   const onCreate = useContext(DiaryDispatchContext);
   return (
-    <div>
+    <div className="page">
       <h1>두자리수의 곱셈 세로셈</h1>
       <button onClick={onCreate}> 다른 문제 </button>
-      <div className="quiz">
-        <section className="row">
-          <div className="question">
-            <Questions className="real" />
-          </div>
-        </section>
+      <div className="sheet">
+        <Questions />
       </div>
     </div>
   );

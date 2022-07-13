@@ -6,10 +6,6 @@ input {
   font-size: 40px;
 }
 
-.all {
-  display:flex;
-}
-
 .questions {
   display: flex;
   flex-direction: row;

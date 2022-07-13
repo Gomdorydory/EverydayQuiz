@@ -8,11 +8,11 @@ const Questions = () => {
   data.map((it) => console.log(it.num1));
 
   return (
-    <div>
+    <div className="all">
       {data.map((it) => (
         <div key={it.id}>
           <div className="questions">
-            <div className="questionNum">문{it.id}</div>
+            <div className="questionNum">{it.id}</div>
             <div>
               <div className="process">
                 <div className="num1"> {it.num1} </div>

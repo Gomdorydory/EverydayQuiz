@@ -1,33 +1,25 @@
 .App {
+  display: flex;
+  justify-content: center;
+  text-align: center;
   padding: 20px;
+  width: 100vw;
 }
 
-.quiz {
-  display: flex;
-  justify-content: space-around;
-  background-color: rgb(177, 177, 177);
-  padding: 20px;
-  width: 80vw;
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+.sheet {
   background-color: rgb(255, 255, 255);
+  border: 10px solid gray;
+  border-radius: 20px;
   min-height: 100px;
-  width: 80vw;
+  width: 700px;
+  height: 900px;
 }
 
-.question {
-  display: flex;
+.all {
+  display : grid;
+  grid-template-columns : 1fr 1fr 1fr;
+  justify-items: center;
+  width: 97%;
+  height: 100%;
   padding: 10px;
-  margin: 10px;
-  min-height: 100px;
-  width: 230px;
-}
-
-.real {
-  display: flex;
-  
 }

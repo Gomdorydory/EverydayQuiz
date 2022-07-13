@@ -19,6 +19,10 @@ import Quiz from "./pages/Quiz";
 export const DiaryStateContext = React.createContext();
 export const DiaryDispatchContext = React.createContext();
 
+//문제의 개수 설정 //useRef사용 //사용자선택할 수 있게
+const QuestionLength = 12;
+const setQuestionLength = () => {};
+
 //component App
 function App() {
   //reducer를 통한 oncreate함수 결과 제어
@@ -31,31 +35,16 @@ function App() {
       case "CREATE": {
         let newItem = action.data;
         newState = [...state, newItem];
-        if (newState.length > 10) {
+        if (newState.length > QuestionLength) {
           newState = [];
+          newState = [newItem];
         }
-        //클릭할때마다 새로운 배열이 생성되었으면 좋겠는데 배열이 하나씩 줄어든다.... 신기한게 다 줄어들면 다시 새로운 배열이 탄생한다...
       }
       default:
         return newState;
     }
     return newState;
   };
-
-  // 랜덤 숫자로 이루어진 배열 뽑아내기
-  let arraylength = 20;
-
-  const numbers = Array(arraylength)
-    .fill()
-    .map((item, index) => index + 1);
-
-  const random = [];
-
-  while (arraylength > 0) {
-    const num = Math.floor(Math.random() * 100);
-    random.push(num);
-    arraylength -= 1;
-  }
 
   //useReducer
   const [data, dispatch] = useReducer(reducer, []);
@@ -64,13 +53,15 @@ function App() {
   const dataId = useRef(0);
   //dispatch함수 (문제 생성 함수) - 이거를 9번 실행하게 만들기
   const onCreate = () => {
-    for (dataId.current; dataId.current < 10; dataId.current++) {
+    for (dataId.current; dataId.current < QuestionLength; dataId.current++) {
+      const num1 = Math.floor(Math.random() * 100);
+      const num2 = Math.floor(Math.random() * 100);
       dispatch({
         type: "CREATE",
         data: {
           id: dataId.current + 1,
-          num1: random[dataId.current],
-          num2: random[dataId.current + 1],
+          num1: num1,
+          num2: num2,
           cal: "x",
         },
       });
@@ -137,3 +128,18 @@ export default App;
 //   { id: 8, num1: ran1, num2: ran2, cal: "x" },
 //   { id: 9, num1: ran1, num2: ran2, cal: "x" },
 // ];
+
+// 랜덤 숫자로 이루어진 배열 뽑아내기
+// let arraylength = 20;
+
+// const numbers = Array(arraylength)
+//   .fill()
+//   .map((item, index) => index + 1);
+
+// const random = [];
+
+// while (arraylength > 0) {
+//   const num = Math.floor(Math.random() * 100);
+//   random.push(num);
+//   arraylength -= 1;
+// }
