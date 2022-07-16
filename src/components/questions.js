@@ -2,31 +2,16 @@ import { useContext } from "react";
 import { DiaryStateContext } from "../App";
 import "./question.css";
 
-const Questions = () => {
-  const data = useContext(DiaryStateContext);
-
-  data.map((it) => console.log(it.num1));
-
+const Questions = (data) => {
   return (
     <div className="all">
-      {data.map((it) => (
-        <div key={it.id}>
-          <div className="questions">
-            <div className="questionNum">{it.id}</div>
-            <div>
-              <div className="process">
-                <div className="num1"> {it.num1} </div>
-                <div className="process_2">
-                  <div className="cal"> {it.cal} </div>
-                  <div className="num2"> {it.num2} </div>
-                </div>
-              </div>
-
-              <div className="processed">
-                <div className="num"> {it.num1 * it.num2} </div>
-              </div>
-            </div>
-          </div>
+      {data.data.map((it) => (
+        <div key={it.id} className="question">
+          <div className="QNum">{it.id}</div>
+          <div className="N num1"> {it.num1} </div>
+          <div className="cal"> {it.cal} </div>
+          <div className="N num2"> {it.num2} </div>
+          <div className="N result"> {it.num1 * it.num2} </div>
         </div>
       ))}
     </div>
