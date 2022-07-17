@@ -24,3 +24,17 @@
   height: 100%;
   padding: 10px;
 }
+
+/* 달력 */
+.calender {
+  display: grid;
+  grid-template-rows: 50px 50px 50px;
+  grid-template-columns: 50px 50px 50px;
+  grid-gap: 20px;
+  background-color: gray;
+}
+
+#num1 {
+  background-color: aliceblue;
+  margin: 10px;
+}

@@ -1,5 +1,3 @@
-import Questions from "../components/questions";
-
 const New = () => {
   return (
     <div>
